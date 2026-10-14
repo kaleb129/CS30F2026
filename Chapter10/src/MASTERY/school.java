@@ -57,7 +57,7 @@ public class school {
 		ImageIcon fran = new ImageIcon("C:\\Users\\49052003\\git\\CS30F2026\\Chapter10\\src\\MASTERY\\stfrancis.jpg");
 		
 		frame = new JFrame();
-		frame.setBounds(100, 100, 864, 550);
+		frame.setBounds(100, 100, 1178, 781);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		JPanel panel = new JPanel();
@@ -83,8 +83,8 @@ public class school {
 		school.setBounds(311, 147, 121, 22);
 		panel.add(school);
 		
-		JLabel slogo = new JLabel("New label");
-		slogo.setBounds(90, 317, 138, 118);
+		JLabel slogo = new JLabel("");
+		slogo.setBounds(90, 317, 534, 378);
 		panel.add(slogo);
 		
 		fname = new JTextField();
@@ -122,14 +122,15 @@ public class school {
 		lname.setBounds(294, 58, 138, 20);
 		panel.add(lname);
 		
-		JLabel person = new JLabel("New label");
-		person.setBounds(90, 228, 342, 78);
+		JLabel person = new JLabel("");
+		person.setBounds(24, 228, 583, 78);
 		panel.add(person); 
 		
 		
 		
 		JButton submit = new JButton("SUBMIT");
-		submit.addActionListener(new ActionListener() {
+		submit.addActionListener(new ActionListener() 
+		{
 			public void actionPerformed(ActionEvent e) 
 			{
 				String fn = fname.getText();
@@ -137,7 +138,32 @@ public class school {
 				Object gr = grade.getSelectedItem();
 				Object schl = school.getSelectedItem();
 				
-				person.setText(fn + ln + " is in grade "+ gr  + schl);
+				person.setText(fn +" " + ln + " is in grade "+ gr  + " and is attending "+ schl+".");
+				
+
+			 	if (schl.equals("Aberhart"))
+			 	{
+			 		slogo.setIcon(abe);
+			 	}
+			 	if (schl.equals("Crescent Heights"))
+			 	{
+			 		slogo.setIcon(chhs);
+			 	}
+			 	if (schl .equals("Western"))
+			 	{
+			 		slogo.setIcon(west);
+			 	}
+			 	if (schl .equals("North Trail"))
+			 	{
+			 		slogo.setIcon(nt);
+			 	}
+			 	if (schl .equals("Francis"))
+			 	{
+			 		slogo.setIcon(fran);
+			 	}
+			 	
+			 	
+			 	
 				
 		
 			}
